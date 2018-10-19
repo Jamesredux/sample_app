@@ -3,7 +3,7 @@ class UsersController < ApplicationController
  before_action :correct_user, only: [:edit, :update]
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page]) #if you user per page here you also have to use it in the test
   end
     
 	def show
