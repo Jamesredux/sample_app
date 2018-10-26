@@ -31,4 +31,24 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
  	assert_select 'a', text: 'delete', count: 0
  end			
 
+ 
+ test "can not view new user show page if account not activated" do 
+   get signup_path 
+   post users_path, params: { user: { name: "Example User", 
+                                          email: "user@example.com", 
+                                          password: "password", 
+                                          password_confirmation: "password"} }
+   user = assigns(:user)
+   assert_not user.activated?
+   user_id = user.id
+   log_in_as(@non_admin)
+   #when you try to access the users show page when they have not been activated
+   # you should be redirected to the home page.
+   get user_path user_id
+   follow_redirect!
+   assert_template 'static_pages/home'
+  end 
+
+#could not find a 2nd test that worked to check that users were not added to index until they are activated.
 end
+
