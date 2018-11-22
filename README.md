@@ -40,3 +40,5 @@ $ rails server
 
 For more information, see the
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
+
+I have not yet set up a cloud service to store images, aws is one posibility
