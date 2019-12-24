@@ -28,7 +28,7 @@ gem 'jbuilder', '2.7.0'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '3.1.12'
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.1'
 gem 'faker', '1.7.3'
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.9.4'
